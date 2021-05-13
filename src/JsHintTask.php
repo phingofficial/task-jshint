@@ -264,7 +264,7 @@ class JsHintTask extends Task
      */
     private function checkJsHintIsInstalled()
     {
-        exec('jshint -v', $output, $return);
+        exec('jshint -v 2>&1', $output, $return);
         if ($return !== 0) {
             throw new \BuildException('JSHint is not installed!');
         }
